@@ -25,6 +25,12 @@ jobs:
           filename: "./google.key"
           is-executable: false
 
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+          java-version: '17'
+          distribution: 'temurin'
+          
     - name: Run GCP AppEngine Deploy
       run: |
         export GOOGLE_APPLICATION_CREDENTIALS="./google.key"
