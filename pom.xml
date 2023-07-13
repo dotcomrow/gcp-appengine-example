@@ -100,7 +100,7 @@ limitations under the License.
     <repository>
       <id>central</id>
       <name>Maven Central remote repository</name>
-      <url>artifactregistry://<LOCATION>-maven.pkg.dev/<PROJECT_ID>/<REMOTE-REPOSITORY-NAME></url>
+      <url>artifactregistry://<GCP_REGION>-maven.pkg.dev/<GCP_PROJECT_ID>/<REMOTE_REPOSITORY_NAME></url>
       <layout>default</layout>
       <releases>
         <enabled>true</enabled>

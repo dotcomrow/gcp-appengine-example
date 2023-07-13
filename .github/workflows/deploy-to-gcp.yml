@@ -25,12 +25,33 @@ jobs:
           filename: "./google.key"
           is-executable: false
 
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v3
+      with:
+          find: "<GCP-PROJECT-ID>"
+          replace: ${{ vars.GCP_PROJECT_ID }}
+          regex: false
+
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v3
+      with:
+          find: "<GCP_REGION>"
+          replace: ${{ vars.GCP_REGION }}
+          regex: false
+
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v3
+      with:
+          find: "<REMOTE_REPOSITORY_NAME>"
+          replace: ${{ vars.REMOTE_REPOSITORY_NAME }}
+          regex: false
+
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
           java-version: '17'
           distribution: 'temurin'
-          
+
     - name: Run GCP AppEngine Deploy
       run: |
         export GOOGLE_APPLICATION_CREDENTIALS="./google.key"
