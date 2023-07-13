@@ -28,7 +28,7 @@ jobs:
     - name: Find and Replace
       uses: jacobtomlinson/gha-find-replace@v3
       with:
-          find: "<GCP-PROJECT-ID>"
+          find: "<GCP_PROJECT_ID>"
           replace: ${{ vars.GCP_PROJECT_ID }}
           regex: false
 
