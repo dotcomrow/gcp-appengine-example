@@ -24,3 +24,7 @@ jobs:
           base64-encoded-secret: ${{ secrets.GOOGLE_CREDENTIALS }}
           filename: "./google.key"
           is-executable: false
+
+    - name: Run GCP AppEngine Deploy
+      run: |
+        mvn appengine:deploy
