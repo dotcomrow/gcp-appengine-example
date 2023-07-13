@@ -28,4 +28,4 @@ jobs:
     - name: Run GCP AppEngine Deploy
       run: |
         export GOOGLE_APPLICATION_CREDENTIALS="./google.key"
-        mvn appengine:deploy
+        mvn package appengine:deploy
