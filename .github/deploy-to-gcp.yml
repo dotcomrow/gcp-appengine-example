@@ -1,0 +1,26 @@
+name: 'Terraform'
+
+on:
+  push:
+    branches: [ "deploy" ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  appengine:
+    name: 'AppEngine Deployment'
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Writing Google key
+      uses: mobiledevops/secret-to-file-action@v1
+      with:
+          base64-encoded-secret: ${{ secrets.GOOGLE_CREDENTIALS }}
+          filename: "./google.key"
+          is-executable: false
