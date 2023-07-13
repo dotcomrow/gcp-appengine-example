@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'GCP AppEngine Deployment'
 
 on:
   push:
