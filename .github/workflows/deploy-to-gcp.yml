@@ -46,6 +46,19 @@ jobs:
           replace: ${{ vars.REMOTE_REPOSITORY_NAME }}
           regex: false
 
+    - name: Add Maven Wagon
+      run: |
+        cat > ~/.mvn/extensions.xml <<EOF
+        <extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/EXTENSIONS/1.0.0 http://maven.apache.org/xsd/core-extensions-1.0.0.xsd">
+          <extension>
+            <groupId>com.google.cloud.artifactregistry</groupId>
+            <artifactId>artifactregistry-maven-wagon</artifactId>
+            <version>2.2.1</version>
+          </extension>
+        </extensions>
+        EOF
+
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
