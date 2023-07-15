@@ -49,6 +49,13 @@ jobs:
     - name: Find and Replace
       uses: jacobtomlinson/gha-find-replace@v3
       with:
+          find: "<PROJECT_NAME>"
+          replace: ${{ vars.GCP_REGION }}
+          regex: false
+
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v3
+      with:
           find: "<REMOTE_REPOSITORY_NAME>"
           replace: ${{ vars.REMOTE_REPOSITORY_NAME }}
           regex: false
