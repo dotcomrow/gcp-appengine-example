@@ -1,9 +1,10 @@
 name: 'GCP AppEngine Deployment'
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "deploy" ]
-  pull_request:
+  
 
 permissions:
   contents: read
