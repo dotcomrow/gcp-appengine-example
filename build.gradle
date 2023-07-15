@@ -35,6 +35,9 @@ appengine {
     tools {
         serviceAccountKeyFile = file("./google.key")
     }
+    stage {
+      artifact = "${buildDir}/libs/${project.name}.jar"
+    }
     deploy {
         projectId = "<GCP_PROJECT_ID>"
         version = "1"

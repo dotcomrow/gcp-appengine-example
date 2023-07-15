@@ -56,4 +56,4 @@ jobs:
     - name: Run GCP AppEngine Deploy
       run: |
         export GOOGLE_APPLICATION_CREDENTIALS="./google.key"
-        gradle shadowJar appengineDeploy
+        gradle appengineDeploy
