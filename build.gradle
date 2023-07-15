@@ -6,6 +6,7 @@ buildscript {
     dependencies {
         classpath 'org.springframework.boot:spring-boot-gradle-plugin:3.1.1'
         classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.4.5'
+        classpath 'gradle.plugin.com.github.johnrengelman:shadow:7.1.2'
     }
 }
 
@@ -13,8 +14,8 @@ plugins {
 	id 'org.springframework.boot' version '3.1.1'
 	id 'java'
     id 'com.google.cloud.tools.appengine' version '2.4.5'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
-// apply plugin: 'com.google.cloud.tools.appengine-maven-plugin'
 
 repositories { 
     mavenCentral() 
