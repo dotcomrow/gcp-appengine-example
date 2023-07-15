@@ -53,6 +53,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+    - name: Terraform Deploy
+      run: |
+        cd terraform
+        terraform init
+        terraform plan -input=false
+        terraform apply -auto-approve -input=false
+        cd ..
+        
     - name: Run GCP AppEngine Deploy
       run: |
         export GOOGLE_APPLICATION_CREDENTIALS="./google.key"
