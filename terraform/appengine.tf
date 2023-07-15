@@ -3,7 +3,7 @@ resource "google_service_account" "gae_service_account" {
   display_name = "GAE Service Account"
 }
 
-resource "google_app_engine_application" "app" {
+resource "google_app_engine_standard_app_version" "gae-appengine-example" {
     version_id      = "v2"
     service         = "gae-appengine-example"
     runtime         = "java17"
