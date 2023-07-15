@@ -29,8 +29,11 @@ dependencies {
 }
 
 appengine {
+    tools {
+        serviceAccountKeyFile = file("./google.key")
+    }
     deploy {
-        projectId = "YOUR PROJECT ID HERE"
+        projectId = "<GCP_PROJECT_ID>"
         version = "1"
         stopPreviousVersion = true
         promote = true
