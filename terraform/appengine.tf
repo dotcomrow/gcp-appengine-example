@@ -8,7 +8,6 @@ resource "google_app_engine_application" "app" {
     service         = "gae-appengine-example"
     runtime         = "java17"
     app_engine_apis = true
-    project     = <GCP_PROJECT_ID>
     location_id = "us-east1"
     service_account = google_service_account.gae_service_account.email
 
