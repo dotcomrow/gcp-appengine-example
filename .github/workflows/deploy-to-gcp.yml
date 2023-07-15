@@ -50,7 +50,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@v3
       with:
           find: "<PROJECT_NAME>"
-          replace: ${{ vars.GCP_REGION }}
+          replace: ${{ vars.PROJECT_NAME }}
           regex: false
 
     - name: Find and Replace
