@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        jcenter() 
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:3.1.1'
+        classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.4.5'
+    }
+}
+
+plugins {
+	id 'org.springframework.boot' version '3.1.1'
+	id 'java'
+    id 'com.google.cloud.tools.appengine' version '2.4.5'
+}
+// apply plugin: 'com.google.cloud.tools.appengine-maven-plugin'
+
+repositories { 
+    mavenCentral() 
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.1.1'
+    implementation 'org.springframework.cloud:spring-cloud-gcp-starter-logging:1.2.8.RELEASE'
+    implementation 'com.google.cloud:google-cloud-core:2.21.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'org.springframework.cloud:spring-cloud-gcp-starter:1.2.8.RELEASE'
+}
+
+appengine {
+    deploy {
+        projectId = "YOUR PROJECT ID HERE"
+        version = "1"
+        stopPreviousVersion = true
+        promote = true
+    }
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_17
+}
+
+jar {
+    archiveBaseName = 'gcp-example'
+    archiveVersion =  '1.0.0'
+}
